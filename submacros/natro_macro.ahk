@@ -2347,6 +2347,11 @@ DllCall("DeleteObject", "ptr", hBM)
 (GuiCtrl := MainGui.Add("CheckBox", "xp yp+60 wp +Center Disabled vFieldDriftCheck2 Checked" FieldDriftCheck2, "Drift`nComp")).Section := "Gather", GuiCtrl.OnEvent("Click", nm_saveConfig)
 (GuiCtrl := MainGui.Add("CheckBox", "xp yp+60 wp +Center Disabled vFieldDriftCheck3 Checked" FieldDriftCheck3, "Drift`nComp")).Section := "Gather", GuiCtrl.OnEvent("Click", nm_saveConfig)
 
+MainGui.Add("Text", "x65 y83 w50 Hiddden +center +BackgroundTrans", "Option Disabled")
+Gui, Add, Text, vFieldDriftDisabled1 x65 y83 w50 Hidden +Center +BackgroundTrans, Option Disabled
+Gui, Add, Text, vFieldDriftDisabled2 xp yp+60 w50 Hidden +Center +BackgroundTrans, Option Disabled
+Gui, Add, Text, vFieldDriftDisabled3 xp yp+60 w50 Hidden +Center +BackgroundTrans, Option Disabled
+
 MainGui.Add("Button", "x115 y89 w9 h14 Disabled vFDCHelp1", "?").OnEvent("Click", nm_FDCHelp)
 MainGui.Add("Button", "xp yp+60 w9 h14 Disabled vFDCHelp2", "?").OnEvent("Click", nm_FDCHelp)
 MainGui.Add("Button", "xp yp+60 w9 h14 Disabled vFDCHelp3", "?").OnEvent("Click", nm_FDCHelp)
