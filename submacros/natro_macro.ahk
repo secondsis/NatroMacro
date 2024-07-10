@@ -881,7 +881,7 @@ nm_ReadIni(path)
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 nectarnames:=["Comforting", "Refreshing", "Satisfying", "Motivating", "Invigorating"]
 planternames:=["PlasticPlanter", "CandyPlanter", "BlueClayPlanter", "RedClayPlanter", "TackyPlanter", "PesticidePlanter", "HeatTreatedPlanter", "HydroponicPlanter", "PetalPlanter", "PlanterOfPlenty", "PaperPlanter", "TicketPlanter"]
-fieldnames:=["dandelion", "sunflower", "mushroom", "blueflower", "clover", "strawberry", "spider", "bamboo", "pineapple", "stump", "cactus", "pumpkin", "pinetree", "rose", "mountaintop", "pepper", "coconut"]
+fieldnames:=["dandelion", "sunflower", "mushroom", "blueflower", "clover", "strawberry", "spider", "bamboo", "pineapple", "stump", "cactus", "pumpkin", "pinetree", "rose", "mountaintop", "pepper", "coconut", "tradinghub"]
 
 ComfortingFields:=["Dandelion", "Bamboo", "Pine Tree"]
 RefreshingFields:=["Coconut", "Strawberry", "Blue Flower"]
@@ -1438,7 +1438,8 @@ FieldBooster:=Map("pine tree", {booster:"blue", stacks:1}
 	, "stump", {booster:"none", stacks:0}
 	, "mountain top", {booster:"none", stacks:0}
 	, "coconut", {booster:"none", stacks:0}
-	, "pepper", {booster:"none", stacks:0})
+	, "pepper", {booster:"none", stacks:0}
+	, "trading hub", {booster: "none", stacks: 0})
 
 ;Gumdrops carried me, they so pro
 CommandoChickHealth := Map(3, 150
@@ -1723,6 +1724,20 @@ nm_importFieldDefaults()
 		, "shiftlock", 0
 		, "invertFB", 0
 		, "invertLR", 0)
+	FieldDefault["Trading Hub"] := ("pattern":"Squares"
+		, "size":"M"
+		, "width":5
+		, "camera":"None"
+		, "turns":1
+		, "sprinkler":"Center"
+		, "distance":1
+		, "percent":95
+		, "gathertime":10
+		, "convert":"Rejoin"
+		, "drift":0
+		, "shiftlock":0
+		, "invertFB":0
+		, "invertLR":0)
 
 	global StandardFieldDefault := ObjFullyClone(FieldDefault)
 
@@ -1969,7 +1984,7 @@ HasPopStar:=0
 PopStarActive:=0
 PreviousAction:="None"
 CurrentAction:="Startup"
-fieldnamelist := ["Bamboo","Blue Flower","Cactus","Clover","Coconut","Dandelion","Mountain Top","Mushroom","Pepper","Pine Tree","Pineapple","Pumpkin","Rose","Spider","Strawberry","Stump","Sunflower"]
+fieldnamelist := ["Bamboo","Blue Flower","Cactus","Clover","Coconut","Dandelion","Mountain Top","Mushroom","Pepper","Pine Tree","Pineapple","Pumpkin","Rose","Spider","Strawberry","Stump","Sunflower", "Trading Hub"]
 hotbarwhilelist := ["Never","Always","At Hive","Gathering","Attacking","Microconverter","Whirligig","Enzymes","GatherStart","Snowflake"]
 sprinklerImages := ["saturator"]
 ReconnectDelay:=0
