@@ -88,7 +88,7 @@ Thank you all for your hard work and support!
 <a name="stars"><h2>🌠 Stars</h2></a>
 
 If Natro Macro helped you, let us know by giving it a ⭐ $\color{yellow}{\textsf{Star}}$ on GitHub!<br>
-You can do this by the Star button at the top of the page!
+You can do this by clicking the Star button at the top of the page!
 
 <a href="https://github.com/NatroTeam/NatroMacro/stargazers">
   <picture>
