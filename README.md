@@ -1,29 +1,33 @@
 <!--
-  /\ \ \__ _| |_ _ __ ___     /\/\   __ _  ___ _ __ ___  
+  ____         ___              _   _
+ / ___| _ __  / _ \__      _ __| | | |  ___
+ \___ \| '_ \  | | \ \ /\ / / _  | |/  / __|
+  ___) | | | | |_| |\ V  V / (_| |     \___\
+ |____/|_| |_|\___/  \_/\_/\__,|_|     |___/
+  /\ \ \__ _| |_ _ __ ___     /\/\   __ _  ___ _ __ ___   
  /  \/ / _` | __| '__/ _ \   /    \ / _` |/ __| '__/ _ \ 
 / /\  / (_| | |_| | | (_) | / /\/\ \ (_| | (__| | | (_) |
 \_\ \/ \__,_|\__|_|  \___/  \/    \/\__,_|\___|_|  \___/                                                    
 
-Thanks for downloading Natro Macro!
+Thanks for downloading Sn0wd's Natro Macro!
 
 To start the macro, just open 'START.bat'!
 
-If you need help or want to discuss, join our Discord server!
+If you need help or want to discuss, contact ``snowedn`` on Discord!
 
-Feel free to give us a Star on GitHub!
+Feel free to give a Star on GitHub!
 
 IMPORTANT:
 Make sure you are only downloading from an official source!
-The only official sources are:
- - our GitHub page (https://github.com/NatroTeam/NatroMacro)
- - our Discord server (https://discord.gg/natromacro)
+The only official source is:
+ - my GitHub page ([https://github.com/NatroTeam/NatroMacro](https://github.com/secondsis/NatroMacro))
 
 >>> IGNORE BELOW THIS LINE <<<
 -->
 
-<!-- no official site warning -->
+<!-- not original warning -->
 > [!CAUTION]
-> We do **not** have a website. The only official place to download Natro Macro is this repository and [discord.gg/natromacro][discord-link].
+> If you want to download the ORIGINAL Natro Macro, this is **NOT** the place! This is Sn0wd's **modification** of Natro! Go to [Natro GitHub](https://github.com/NatroTeam/NatroMacro/releases) if you are looking for that!
 
 <div align="center">
 
@@ -37,7 +41,6 @@ The only official sources are:
 <!-- shields and contents -->
 [![][latest-release-shield]][latest-release-link]
 [![][downloads-shield]][downloads-link]
-[![][discord-shield]][discord-link]
 <br>
 An open-source Bee Swarm Simulator macro written in AutoHotkey!<br>
 </div>
@@ -50,44 +53,24 @@ An open-source Bee Swarm Simulator macro written in AutoHotkey!<br>
 3. Run `START.bat` and wait for the macro to load
 
 
-<a name="community"><h2>🌎 Community</h2></a>
-
-[**Join us on Discord!**][discord-link]
-
-This is where you can connect with the community, access guides and help channels, and download custom patterns, paths, and themes!
-
-Discord is our main platform for troubleshooting and update news!
-
-<a href="https://discord.gg/natromacro">
-  <picture>
-    <source media="(prefers-color-scheme: light)" srcset="http://invidget.switchblade.xyz/natromacro?theme=light"> <!-- light theme -->
-    <img alt="discord-invite-widget" width=500 src="http://invidget.switchblade.xyz/natromacro"> <!-- dark theme -->
-  </picture>
-</a>
-
-
 <a name="contributing"><h2>⌨️ Contributing</h2></a>
 
-Natro Macro is an open-source project. We greatly appreciate all contributions, whether you are helping us fix bugs or suggesting new features. If you want to get started, read our [Contributing Guidelines][contributing-link] first.
-
-- **Bugs**: If you find an issue or run into an error message while using the macro, please create a [bug report][bug-report-link].
-- **Suggestions**: If you have an idea for a feature that you'd like to see in the macro, please submit a [suggestion][suggestion-link].
-- **Code/Development**: If you are interested in developing features for the macro, check out the development repository @ [NatroMacroDev][natromacrodev-link]
-
-For discussions, please join us on [Discord][discord-link] instead!
+This is a fork of the original Natro Macro project. If you would like to contribute, please go over to their page and read their
+Contributing Guidelines.
 
 
 <a name="credits"><h2>💝 Credits</h2></a>
 
+The original Natro Macro was NOT made by me! It was made from a whole team of contributors!
 Natro Macro wouldn't be possible without the help and inspiration of many extraordinary individuals.<br>
-We want to show our gratitude to all of you, so please check out our [list of credits][credits-link]!
+I want to show my gratitude to all of you, so please check out their [list of credits][credits-link]!
 
 Thank you all for your hard work and support!
 
 
 <a name="stars"><h2>🌠 Stars</h2></a>
 
-If Natro Macro helped you, let us know by giving it a ⭐ $\color{yellow}{\textsf{Star}}$ on GitHub!<br>
+If Sn0wd's Natro Macro helped you, let me know by giving it a ⭐ $\color{yellow}{\textsf{Star}}$ on GitHub!<br>
 You can do this by clicking the Star button at the top of the page!
 
 <a href="https://github.com/NatroTeam/NatroMacro/stargazers">
@@ -99,21 +82,23 @@ You can do this by clicking the Star button at the top of the page!
 
 <a name="license"><details><summary><h4>📝 License</h4></summary></a>
 Copyright © [Natro Team][github-profile-link]<br>
+Mod Copyright © [secondsis][github-my-profile-link]
 This project is licensed under [GNU GPL v3.0](./LICENSE.md)
 
 </details>
 
 <!-- links -->
 [latest-release-shield]: https://img.shields.io/github/v/release/NatroTeam/NatroMacro?logo=github&logoColor=white&labelColor=black&color=faa125
-[latest-release-link]: https://github.com/NatroTeam/NatroMacro/releases/latest
+[latest-release-link]: https://github.com/secondsis/NatroMacro/releases/latest
 [downloads-shield]: https://img.shields.io/github/downloads/NatroTeam/NatroMacro/total?label=downloads&labelColor=black&color=40ca53&logo=data:image/svg%2bxml;base64,PHN2ZwogICB2aWV3Qm94PSIwIDAgMjQgMjQiCiAgIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CiAgPHBhdGgKICAgICBmaWxsPSIjZmZmIgogICAgIGQ9Ik0gMTIsMC4yMDk2MTUxNSBBIDExLjc5MDM4NSwxMS43OTAzODUgMCAxIDAgMjMuNzkwMzg1LDEyIDExLjc5MDM4NSwxMS43OTAzODUgMCAwIDAgMTIsMC4yMDk2MTUxNSBaIE0gOS4zMDAwMDE5LDkuOTgzODQ0MiAxMC44MjA5NjIsMTEuNTE2NTk0IFYgNC45MjU3NjkxIGggMi4zNTgwNzYgViAxMS41MTY1OTQgTCAxNC42OTk5OTgsOS45OTU2MzQ2IDE2LjM2MjQ0MiwxMS42NTgwNzkgMTIsMTYuMDIwNTIxIDcuNjI1NzY3MiwxMS42NTgwNzkgWiBNIDE2LjcxNjE1NCwxOS4wNzQyMzEgSCA3LjI4Mzg0NjEgdiAtMi4zNTgwNzcgaCA5LjQzMjMwNzkgeiIKICAgICAvPgo8L3N2Zz4K
-[downloads-link]: https://github.com/NatroTeam/NatroMacro/releases
+[downloads-link]: https://github.com/secondsis/NatroMacro/releases
 [discord-shield]: https://img.shields.io/discord/1012610056921038868?logo=discord&logoColor=white&label=discord&labelColor=black&color=5865f2
-[discord-link]: https://discord.gg/natromacro
-[contributing-link]: https://github.com/NatroTeam/.github/blob/main/CONTRIBUTING.md
+<!-- [discord-link]: https://discord.gg/natromacro -->
+<!-- [contributing-link]: https://github.com/NatroTeam/.github/blob/main/CONTRIBUTING.md -->
 [credits-link]: https://github.com/NatroTeam/.github/blob/main/CREDITS.md
-[bug-report-link]: https://github.com/NatroTeam/NatroMacro/issues/new?assignees=&labels=bug%2Cneeds+triage&projects=&template=bug.yml
-[suggestion-link]: https://github.com/NatroTeam/NatroMacro/issues/new?assignees=&labels=suggestion%2Cneeds+triage&projects=&template=suggestion.yml
+<!-- [bug-report-link]: https://github.com/NatroTeam/NatroMacro/issues/new?assignees=&labels=bug%2Cneeds+triage&projects=&template=bug.yml -->
+<!-- [suggestion-link]: https://github.com/NatroTeam/NatroMacro/issues/new?assignees=&labels=suggestion%2Cneeds+triage&projects=&template=suggestion.yml -->
 [github-profile-link]: http://github.com/NatroTeam
-[discord-banner-link]: https://invidget.switchblade.xyz/natromacro
+[github-my-profile-link]: http://github.com/secondsis
+<!-- [discord-banner-link]: https://invidget.switchblade.xyz/natromacro -->
 [natromacrodev-link]: https://github.com/NatroTeam/NatroMacroDev
