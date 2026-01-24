@@ -12674,8 +12674,9 @@ nm_Ant() { ;collect Ant Pass then do Challenge
 						if (Mod(A_Index, 10) = 1)
 							PostSubmacroMessage("background", 0x5554, 1, nowUnix())
 						if nm_AmuletPrompt(3, "Ant") {
+							; Turn on Amulet Check
 							; MouseMove windowX+350, windowY+offsetY+100
-							; TODO: Make it so that user can ENABLE the option from GUI!
+							; TODO: Make it so that user can ENABLE the option from GUI
 							break 2
 						}
 						sleep 1000
