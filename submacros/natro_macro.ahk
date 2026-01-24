@@ -11914,7 +11914,7 @@ nm_Ant() { ;collect Ant Pass then do Challenge
 							PostSubmacroMessage("background", 0x5554, 1, nowUnix())
 						; User customizes AntAmuletMode from GUI
 						If ((nm_AmuletPrompt(((AntAmuletMode = 1) ? 1 : 3), "Ant")) = 1) {
-							if(AntAmuletMode = 0) {
+							if(AntAmuletMode = 1) {
 								MouseMove windowX+350, windowY+offsetY+100
 							}
 							break 2
