@@ -450,6 +450,7 @@ nm_importConfig()
 		, "MondoAction", "Buff"
 		, "MondoLootDirection", "Random"
 		, "LastMondoBuff", 1
+		, "AntAmuletMode", 0
 		, "AntPassCheck", 0
 		, "AntPassBuyCheck", 0
 		, "AntPassAction", "Pass"
@@ -2661,24 +2662,32 @@ MainGui.SetFont("w700")
 MainGui.Add("GroupBox", "x5 y42 w125 h124 vCollectGroupBox", "Collect")
 MainGui.SetFont("s8 cDefault Norm", "Tahoma")
 (GuiCtrl := MainGui.Add("CheckBox", "x10 y57 vClockCheck Disabled Checked" ClockCheck, "Clock (tickets)")).Section := "Collect", GuiCtrl.OnEvent("Click", nm_saveConfig)
-(GuiCtrl := MainGui.Add("CheckBox", "x10 yp+18 w50 vMondoBuffCheck Disabled Checked" MondoBuffCheck, "Mondo")).Section := "Collect", GuiCtrl.OnEvent("Click", nm_saveConfig)
+(GuiCtrl := MainGui.Add("CheckBox", "x10 yp+15 w50 vMondoBuffCheck Disabled Checked" MondoBuffCheck, "Mondo")).Section := "Collect", GuiCtrl.OnEvent("Click", nm_saveConfig)
 MondoActionList := ["Buff", "Kill"], PMondoGuid && MondoActionList.Push("Tag", "Guid"), MondoActionList.Default := "", MondoActionList.Length := 4
 MainGui.Add("Text", "x75 yp w40 vMondoAction +Center +BackgroundTrans", MondoAction)
 MainGui.Add("Button", "xp-12 yp-1 w12 h16 vMALeft Disabled", "<").OnEvent("Click", nm_MondoAction)
 MainGui.Add("Button", "xp+51 yp w12 h16 vMARight Disabled", ">").OnEvent("Click", nm_MondoAction)
-MainGui.Add("Text", "x14 yp+15 w110 vMondoPointText +BackgroundTrans Section Hidden" (MondoAction != "Buff" && MondoAction != "Kill"), "\__")
+MainGui.Add("Text", "x14 yp+12 w110 vMondoPointText +BackgroundTrans Section Hidden" (MondoAction != "Buff" && MondoAction != "Kill"), "\__")
 (GuiCtrl := MainGui.Add("Edit", "xs+20 ys+3 w30 h18 number Limit3 vMondoSecs Disabled Hidden" (MondoAction != "Buff"), ValidateInt(&MondoSecs, 120))).Section := "Collect", GuiCtrl.OnEvent("Change", nm_saveConfig)
 MainGui.Add("Text", "x+4 yp+2 vMondoSecsText Hidden" (MondoAction != "Buff"), "Secs")
 MainGui.Add("Text", "xs+18 ys+4 vMondoLootText Hidden" (MondoAction != "Kill"), "Loot:")
 MainGui.Add("Text", "x+13 yp w45 vMondoLootDirection +Center +BackgroundTrans Hidden" (MondoAction != "Kill"), MondoLootDirection)
 MainGui.Add("Button", "xp-12 yp-1 w12 h16 vMLDLeft Disabled Hidden" (MondoAction != "Kill"), "<").OnEvent("Click", nm_MondoLootDirection)
 MainGui.Add("Button", "xp+56 yp w12 h16 vMLDRight Disabled Hidden" (MondoAction != "Kill"), ">").OnEvent("Click", nm_MondoLootDirection)
-(GuiCtrl := MainGui.Add("CheckBox", "x10 y112 w35 vAntPassCheck Disabled Checked" AntPassCheck, "Ant")).Section := "Collect", GuiCtrl.OnEvent("Click", nm_saveConfig)
+(GuiCtrl := MainGui.Add("CheckBox", "x10 y103 w35 vAntPassCheck Disabled Checked" AntPassCheck, "Ant")).Section := "Collect", GuiCtrl.OnEvent("Click", nm_saveConfig)
 MainGui.Add("Text", "x60 yp w55 vAntPassAction +Center +BackgroundTrans", AntPassAction)
 MainGui.Add("Button", "xp-12 yp-1 w12 h16 vAPALeft Disabled", "<").OnEvent("Click", nm_AntPassAction)
 MainGui.Add("Button", "xp+66 yp w12 h16 vAPARight Disabled", ">").OnEvent("Click", nm_AntPassAction)
-MainGui.Add("Text", "x14 yp+15 vAntPassPointText +BackgroundTrans", "\__")
+MainGui.Add("Text", "x14 yp+12 vAntPassPointText +BackgroundTrans", "\__")
 MainGui.Add("CheckBox", "x+4 yp+5 vAntPassBuyCheck Disabled Checked" AntPassBuyCheck, "Use Tickets").OnEvent("Click", nm_AntPassBuyCheck)
+MainGui.Add("Text", "x14 yp+12 vAntPassPointText +BackgroundTrans", "\__")
+MainGui.Add("CheckBox", "x+4 yp vAntAmuletMode Disabled Checked" AntAmuletMode).OnEvent("Click", nm_saveAmulet)
+hBM := Gdip_CreateHBITMAPFromBitmap(bitmaps["antamu"])
+; BUG: Some of the gray background from the button above it is redrawn on top of this image, blocking it
+MainGui.Add("Picture", "vAntAmuPicture xp+15 yp w15 h15", "HBITMAP:*" hBM)
+DllCall("DeleteObject", "ptr", hBM)
+Gdip_DisposeImage(bitmaps["antamu"])
+MainGui.Add("Text", "x yp vAntAmuletModeText", (AntAmuletMode = 1) ? " Keep Old" : "Do Nothing")
 (GuiCtrl := MainGui.Add("CheckBox", "x10 yp+17 vHoneystormCheck Disabled Checked" HoneystormCheck, "Honeystorm")).Section := "Collect", GuiCtrl.OnEvent("Click", nm_saveConfig)
 ;memory match
 MainGui.SetFont("w700")
@@ -3478,6 +3487,7 @@ nm_TabCollectLock(){
 	MainGui["MARight"].Enabled := 0
 	MainGui["RoboPassCheck"].Enabled := 0
 	MainGui["HoneystormCheck"].Enabled := 0
+	MainGui["AntAmuletMode"].Enabled := 0
 	MainGui["AntPassCheck"].Enabled := 0
 	MainGui["AntPassBuyCheck"].Enabled := 0
 	MainGui["APALeft"].Enabled := 0
@@ -3568,6 +3578,7 @@ nm_TabCollectUnLock(){
 	MainGui["MARight"].Enabled := 1
 	MainGui["RoboPassCheck"].Enabled := 1
 	MainGui["HoneystormCheck"].Enabled := 1
+	MainGui["AntAmuletMode"].Enabled := 1
 	MainGui["AntPassCheck"].Enabled := 1
 	MainGui["AntPassBuyCheck"].Enabled := 1
 	MainGui["APALeft"].Enabled := 1
@@ -4635,7 +4646,7 @@ nm_WebhookEasterEgg(){
 nm_CollectKillButton(GuiCtrl, *){
 	global
 	static CollectControls := ["CollectGroupBox","DispensersGroupBox","BeesmasGroupBox","BlenderGroupBox","BeesmasFailImage","BeesmasImage"
-		,"ClockCheck","MondoBuffCheck","MondoAction","AntPassCheck","AntPassPointText","AntPassBuyCheck","AntPassAction","RoboPassCheck","HoneystormCheck"
+		,"ClockCheck","MondoBuffCheck","MondoAction","AntAmuletMode","AntAmuPicture","AntAmuletModeText","AntPassCheck","AntPassPointText","AntPassBuyCheck","AntPassAction","RoboPassCheck","HoneystormCheck"
 		,"HoneyDisCheck","TreatDisCheck","BlueberryDisCheck","StrawberryDisCheck","CoconutDisCheck","RoyalJellyDisCheck","GlueDisCheck"
 		,"MALeft","MARight","APALeft","APARight"
 		,"BeesmasGatherInterruptCheck","StockingsCheck","WreathCheck","FeastCheck","RBPDelevelCheck","GingerbreadCheck","SnowMachineCheck","CandlesCheck","WinterMemoryMatchCheck","SamovarCheck","LidArtCheck","GummyBeaconCheck"
@@ -11823,7 +11834,7 @@ nm_BlenderRotation() {
 	}
 }
 nm_Ant() { ;collect Ant Pass then do Challenge
-	global AntPassCheck, AntPassBuyCheck, AntPassAction, QuestAnt, LastAntPass
+	global AntAmuletMode, AntPassCheck, AntPassBuyCheck, AntPassAction, QuestAnt, LastAntPass
 	static AntPassNum:=2
 
 	if(((AntPassCheck && ((AntPassNum<10) || (AntPassAction="challenge"))) && (nowUnix()-LastAntPass>7200)) || (QuestAnt && ((AntPassNum>0) || (AntPassBuyCheck = 1)))){ ;2 hours OR ant quest
@@ -11901,10 +11912,11 @@ nm_Ant() { ;collect Ant Pass then do Challenge
 					loop 300 {
 						if (Mod(A_Index, 10) = 1)
 							PostSubmacroMessage("background", 0x5554, 1, nowUnix())
-						if nm_AmuletPrompt(3, "Ant") {
-							; Turn on Amulet Check
-							; MouseMove windowX+350, windowY+offsetY+100
-							; TODO: Make it so that user can ENABLE the option from GUI
+						; User customizes AntAmuletMode from GUI
+						If ((nm_AmuletPrompt(((AntAmuletMode = 1) ? 1 : 3), "Ant")) = 1) {
+							if(AntAmuletMode = 0) {
+								MouseMove windowX+350, windowY+offsetY+100
+							}
 							break 2
 						}
 						sleep 1000
@@ -23006,7 +23018,7 @@ nm_UpdateGUIVar(var)
 		MainGui[k].Text := %k%
 		nm_HotbarWhile()
 
-		case "KingBeetleAmuletMode", "ShellAmuletMode":
+		case "KingBeetleAmuletMode", "ShellAmuletMode", "AntAmuletMode":
 		MainGui[k].Value := %k%
 		nm_saveAmulet(MainGui[k])
 
