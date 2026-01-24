@@ -73,13 +73,6 @@ Thank you all for your hard work and support!
 If Sn0wd's Natro Macro helped you, let me know by giving it a ⭐ $\color{yellow}{\textsf{Star}}$ on GitHub!<br>
 You can do this by clicking the Star button at the top of the page!
 
-<a href="https://github.com/NatroTeam/NatroMacro/stargazers">
-  <picture>
-    <source media="(prefers-color-scheme: light)" srcset="http://reporoster.com/stars/NatroTeam/NatroMacro"> <!-- light theme -->
-    <img alt="stargazer-widget" src="http://reporoster.com/stars/dark/NatroTeam/NatroMacro"> <!-- dark theme -->
-  </picture>
-</a>
-
 <a name="license"><details><summary><h4>📝 License</h4></summary></a>
 Copyright © [Natro Team][github-profile-link]<br>
 Mod Copyright © [secondsis][github-my-profile-link]
