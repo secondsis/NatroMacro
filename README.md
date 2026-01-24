@@ -75,7 +75,7 @@ You can do this by clicking the Star button at the top of the page!
 
 <a name="license"><details><summary><h4>📝 License</h4></summary></a>
 Copyright © [Natro Team][github-profile-link]<br>
-Mod Copyright © [secondsis][github-my-profile-link]
+Mod Copyright © [secondsis][github-my-profile-link]<br>
 This project is licensed under [GNU GPL v3.0](./LICENSE.md)
 
 </details>
