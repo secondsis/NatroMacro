@@ -1,4 +1,5 @@
-﻿nm_gotoramp()
+﻿; This is for alts with claimed hives only.
+nm_gotoramp()
 Send "{space down}{" RightKey " down}"
 Sleep 100
 Send "{space up}"
@@ -48,4 +49,21 @@ Walk(4)
 send "{" RightKey " up}{" FwdKey " up}{" RotRight " 2}"
 nm_Walk(9, FwdKey)
 nm_Walk(1.5, RightKey)
-;path 230212 zaappiix
+; In the middle of pepper field
+; From here, multiple of these will take over and use a different pattern for each alt
+; Divided into LEFT & RIGHT HALVES
+
+; Go into corner
+nm_Walk(30, LeftKey, FwdKey)
+HyperSleep(200)
+; Go back to center
+nm_Walk(20, RightKey, BackKey)
+
+; Turn a little back to corner
+nm_Walk(10, LeftKey, FwdKey)
+
+send "{" RotRight " 3}"
+
+nm_Walk(20, BackKey)
+
+nm_Walk(15, FwdKey)
